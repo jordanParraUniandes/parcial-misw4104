@@ -2,6 +2,7 @@ import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { App } from './app';
 import { CafeModule } from './cafe/cafe-module';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,9 +11,10 @@ import { CafeModule } from './cafe/cafe-module';
   imports: [
     BrowserModule,
     CafeModule
-],
+  ],
   providers: [
     provideBrowserGlobalErrorListeners(),
+    provideHttpClient()
   ],
   bootstrap: [App]
 })
