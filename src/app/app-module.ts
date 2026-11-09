@@ -7,7 +7,7 @@ import { CafeModule } from './cafe/cafe-module';
   declarations: [
     App
   ],
-imports: [
+  imports: [
     BrowserModule,
     CafeModule
 ],
