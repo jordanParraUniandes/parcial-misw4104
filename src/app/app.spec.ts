@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { App } from './app';
+import { AppModule } from './app-module';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        App
-      ],
+      imports: [AppModule],
+      providers: [provideHttpClientTesting()],
     })
       .compileComponents();
   });
@@ -21,6 +22,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, parcial-misw4104');
+    expect(compiled.querySelector('h1')?.textContent).toContain('El aroma mágico');
   });
 });
